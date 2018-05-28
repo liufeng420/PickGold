@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "fff651dd-df71-4387-8736-411238af6a90",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "游戏页-土地": {
+      "ver": "1.0.3",
+      "uuid": "85434b2f-7256-41f1-9780-de404d615c01",
+      "rawTextureUuid": "fff651dd-df71-4387-8736-411238af6a90",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -26,
+      "trimX": 0,
+      "trimY": 52,
+      "width": 1868,
+      "height": 335,
+      "rawWidth": 1868,
+      "rawHeight": 387,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

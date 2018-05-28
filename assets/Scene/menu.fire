@@ -645,16 +645,14 @@
     "groupIndex": 0
   },
   {
-    "__type__": "280c3rsZJJKnZ9RqbALVwtK",
+    "__type__": "ac0e0Np0BhE4IMqIEzfAgw/",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 15
     },
     "_enabled": true,
-    "startGame": {
-      "__id__": 13
-    }
+    "startGame": null
   },
   {
     "__type__": "cc.Widget",

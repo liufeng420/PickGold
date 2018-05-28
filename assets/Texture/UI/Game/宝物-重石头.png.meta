@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "48d930ea-da1a-4028-9d36-4e64722cb4b4",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "宝物-重石头": {
+      "ver": "1.0.3",
+      "uuid": "63fb6da1-ffd1-45bd-a781-0267ecfe2b9e",
+      "rawTextureUuid": "48d930ea-da1a-4028-9d36-4e64722cb4b4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -0.5,
+      "trimX": 2,
+      "trimY": 5,
+      "width": 155,
+      "height": 123,
+      "rawWidth": 159,
+      "rawHeight": 132,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
