@@ -3,14 +3,14 @@ cc.Class({
 
   properties: {
     // 初始的位置
-    point: {
-      default: {}
+    pos: {
+      default: cc.Vec2(0, 0),
+      type: cc.Vec2,
     },
     renderer: {
       default: null,
       type: cc.Node
     },
   }
-
   
 });
