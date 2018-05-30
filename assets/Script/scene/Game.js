@@ -14,7 +14,7 @@ var Game = cc.Class({
     cc.log('Scene Game on load');
     Game.instance = this;
     this.levelMgr = this.levelMgr.getComponent('LevelMgr');
-    this.levelMgr.start();
+    this.levelMgr.startLevel();
   },
 
   update: function (dt) {
