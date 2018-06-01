@@ -101,6 +101,17 @@
     "_enabled": true,
     "score": 0,
     "goldType": 1,
+    "goldSpriteFrame": [
+      {
+        "__uuid__": "6ac558e4-e49e-45bb-9df2-31af60b126a3"
+      },
+      {
+        "__uuid__": "55f9f1f2-b8c6-45a7-b5a3-8b6b7ea2ed3a"
+      },
+      {
+        "__uuid__": "aa9ae4c7-bf2e-454b-a31f-530ab29354e7"
+      }
+    ],
     "goldSprite": [
       {
         "__uuid__": "6ac558e4-e49e-45bb-9df2-31af60b126a3"
