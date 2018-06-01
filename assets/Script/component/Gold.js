@@ -21,6 +21,7 @@ cc.Class({
 
   init: function (goldType, score, sprite) {
     cc.log("gold init:", goldType, score);
+    this.score = score;
     this.goldType = goldType;
     this.goldSprite = sprite;
     this.goldSprite.spriteFrame = this.goldSpriteFrame[this.goldType-1];

@@ -1,5 +1,4 @@
 var GoldType = cc.Enum({
-  Min: 1,
   Stone: 1, // 石头
   Gold: 2,  // 金块
   Diamond: 3, // 钻石
