@@ -1,18 +1,8 @@
 cc.Class({
   extends: cc.Component,
 
-  onLoad: function () {
-    // this.node.on("CatchGold", this.onCatchGold, this);
-  },
-
-  onDestroy: function () {
-    // this.node.off("CatchGold", this.onCatchGold, this);
-  },
-
   onCollisionEnter: function (other, self) {
     console.log('on collision enter');
-
-
 
     // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
     var world = self.world;
@@ -33,8 +23,9 @@ cc.Class({
     // 以下属性为 矩形 和 多边形 碰撞组件特有属性
     var ps = world.points;
 
+    cc.log(other.node.parent);
     // this.node.dispatchEvent(new cc.Event.EventCustom('foobar', true));
-    this.node.emit("CatchGold", {msg: other});
+    this.node.emit("CatchGold", {msg: other.node.parent});
   },
 
 

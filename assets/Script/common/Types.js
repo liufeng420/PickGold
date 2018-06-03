@@ -1,8 +1,8 @@
 var GoldType = cc.Enum({
-  Stone: 1, // 石头
-  Gold: 2,  // 金块
-  Diamond: 3, // 钻石
-  Max: 4,
+  LightStone: 0, // 轻石头
+  HeavyStone: 1, // 重石头
+  Gold: 2, // 金块
+  Max: 3,
 });
 
 module.exports = {

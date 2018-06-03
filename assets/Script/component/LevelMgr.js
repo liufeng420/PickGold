@@ -6,7 +6,10 @@ var LevelMgr = cc.Class({
 
   properties: {
     battleArea: cc.Node,
-    goldPrefab: cc.Prefab,
+    goldPrefab: {
+      type: cc.Prefab,
+      default: [],
+    },
     oldMan: cc.Node,
     ownMoneyLable: cc.Label,
     targetMoneyLable: cc.Label,
@@ -53,7 +56,9 @@ var LevelMgr = cc.Class({
     let rect = cc.rect(0, 0, this.battleArea.width, this.battleArea.height);
 
     for (var i = 0; i < count; ++i) {
-      var goldNode = cc.instantiate(this.goldPrefab);
+      let goldType = util.randomInt(Types.GoldType.LightStone, Types.GoldType.Max);
+      var goldPref = this.goldPrefab[goldType];
+      var goldNode = cc.instantiate(goldPref);
       
       let angle = util.randomNum(0, 360);
       let point = cc.p(util.randomInt(0, rect.width), util.randomInt(0, rect.height));
@@ -62,20 +67,17 @@ var LevelMgr = cc.Class({
 
       this.battleArea.addChild(goldNode);
       
-      var gold = goldNode.getComponent('Gold');
-      var sprite = goldNode.getComponent(cc.Sprite);
-      // goldNode.position = cc.p(cc.random0To1() * rect.width, cc.random0To1() * rect.height);
-      let goldType = util.randomInt(Types.GoldType.Stone, Types.GoldType.Max);
+      var gold = goldNode.getComponent('Item');
 
       let scale = util.randomNum(0.5, 1.5);
-      if (goldType === Types.GoldType.Diamond) {
+      if (goldType === Types.GoldType.Gold) {
         scale = util.randomNum(0.2, 0.5);
       }
       cc.log(goldType, scale);
       goldNode.setScale(scale, scale);
 
       let score = util.randomInt(10, 100);
-      gold.init(goldType, score, sprite);
+      gold.init(score);
     }
   }
 });

@@ -6,7 +6,7 @@ var HookState = cc.Enum({
 });
 
 var Radius = 50;
-var MoveDistance = 4;
+var MoveDistance = 8;
 
 var Man = cc.Class({
   extends: cc.Component,
@@ -52,7 +52,7 @@ var Man = cc.Class({
 
   onCatchGold: function (event) {
     cc.log("fuck", event.detail.msg);
-    this.targetGoldNode = event.detail.msg.node;
+    this.targetGoldNode = event.detail.msg;
     this.hookState = HookState.FlyBack;
   },
 
@@ -125,7 +125,8 @@ var Man = cc.Class({
     if (cc.pDistanceSQ(point, this.originPos) < Radius * Radius)
     {
       this.hookState = HookState.Rotation;
-      let gold = this.targetGoldNode.getComponent("Gold");
+      cc.log(this.targetGoldNode);
+      let gold = this.targetGoldNode.getComponent("Item");
       this.node.emit("AddScore", { score: gold.score});
       this.targetGoldNode.destroy();
       this.targetGoldNode = null;
