@@ -32,7 +32,7 @@ var LevelMgr = cc.Class({
 
   startLevel: function () {
     cc.log("level start");
-    this.createGold(5);
+    this.createGold(10);
     this.initMan();
     var manager = cc.director.getCollisionManager();
     manager.enabled = true;

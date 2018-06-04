@@ -67,6 +67,11 @@ var Man = cc.Class({
     cc.log("fuck", event.detail.msg);
     this.targetGoldNode = event.detail.msg;
     this.hookState = HookState.FlyBack;
+    if (this.hookAngle > 0) {
+      this.targetGoldNode.rotation = 90 - this.hookAngle;
+    } else {
+      this.targetGoldNode.rotation = this.hookAngle;
+    }
   },
 
   init: function(rect) {
