@@ -7,6 +7,7 @@ var HookState = cc.Enum({
 
 var Radius = 70;
 var MoveDistance = 8;
+var MaxAngle = 60;
 
 var Man = cc.Class({
   extends: cc.Component,
@@ -110,13 +111,13 @@ var Man = cc.Class({
 
   rotationHook: function(dt) {
     this.hookAngle += this.angleDelta;
-    if (this.hookAngle >= 80)
+    if (this.hookAngle >= MaxAngle)
     {
       this.angleDelta = -this.angleDelta;
-      this.hookAngle = 80;
-    } else if (this.hookAngle <= -80) {
+      this.hookAngle = MaxAngle;
+    } else if (this.hookAngle <= -MaxAngle) {
       this.angleDelta = -this.angleDelta;
-      this.hookAngle = -80;
+      this.hookAngle = -MaxAngle;
     }
     this.setHookRotation(this.hookAngle);
 

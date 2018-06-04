@@ -60,9 +60,9 @@ var LevelMgr = cc.Class({
       var goldPref = this.goldPrefab[goldType];
       var goldNode = cc.instantiate(goldPref);
       
-      let angle = util.randomNum(0, 360);
+      // let angle = util.randomNum(0, 360);
       let point = cc.p(util.randomInt(0, rect.width), util.randomInt(0, rect.height));
-      goldNode.rotation = angle;
+      // goldNode.rotation = (cc.random0To1() > 0.5 ? 180 : 0);
       goldNode.setPosition(point);
 
       this.battleArea.addChild(goldNode);
@@ -70,11 +70,12 @@ var LevelMgr = cc.Class({
       var gold = goldNode.getComponent('Item');
 
       let scale = util.randomNum(0.5, 1.5);
-      if (goldType === Types.GoldType.Gold) {
-        scale = util.randomNum(0.2, 0.5);
-      }
+      let scaleX = scale * (cc.random0To1() > 0.5 ? 1 : -1);
+      // if (goldType === Types.GoldType.Gold) {
+      //   scale = util.randomNum(0.2, 0.5);
+      // }
       cc.log(goldType, scale);
-      goldNode.setScale(scale, scale);
+      goldNode.setScale(scaleX, scale);
 
       let score = util.randomInt(10, 100);
       gold.init(score);
