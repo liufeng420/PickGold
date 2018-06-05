@@ -76,9 +76,32 @@ var LevelMgr = cc.Class({
       // }
       cc.log(goldType, scale);
       goldNode.setScale(scaleX, scale);
+      let score = 1;
+      let speedScale = 1;
+      switch (goldType) {
+        case Types.GoldType.LightStone:
+          {
+            score = Math.floor(10 * scale);
+            speedScale = 1 - util.mapNum(scale, 0.5, 1.5, -0.1, 0.1);
+          }
+          break;
+          case Types.GoldType.HeavyStone:
+          {
+            score = Math.floor(20 * scale);
+            speedScale = 0.2 - util.mapNum(scale, 0.5, 1.5, -0.1, 0.1);
+          }
+          break;
+          case Types.GoldType.Gold:
+          {
+            score = Math.floor(100 * scale);
+            speedScale = 0.6 - util.mapNum(scale, 0.5, 1.5, -0.4, 0.4);
+          }
+          break;
+        default:
+          break;
+      }
 
-      let score = util.randomInt(10, 100);
-      gold.init(score);
+      gold.init(score, speedScale);
     }
   }
 });

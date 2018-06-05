@@ -10,7 +10,8 @@ cc.Class({
           },
     },
 
-    init: function(score) {
+    init: function(score, speedScale) {
         this.score = score;
+        this.speedScale = speedScale;
     }
 })

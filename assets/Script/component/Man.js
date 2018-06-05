@@ -149,12 +149,20 @@ var Man = cc.Class({
   },
 
   flyBack: function(dt) {
-    let deltaX = MoveDistance * Math.sin(Math.abs(this.hookAngle) * 0.017453293);
-    let deltaY = MoveDistance * Math.cos(Math.abs(this.hookAngle) * 0.017453293);
+    // 取得对方的速度倍率
+    let speedScale = 1.0;
+    if (this.targetGoldNode !== null) {
+      let item = this.targetGoldNode.getComponent("Item");
+      speedScale = item.speedScale;
+    }
+    let distance = MoveDistance * speedScale;
+
+    let deltaX = distance * Math.sin(Math.abs(this.hookAngle) * 0.017453293);
+    let deltaY = distance * Math.cos(Math.abs(this.hookAngle) * 0.017453293);
     let x = this.hook.node.x - (this.hookAngle > 0 ? -deltaX : deltaX);
     let y = this.hook.node.y + deltaY;
     this.setHookPos(x, y);
-    this.ropeMask.node.height -= MoveDistance;
+    this.ropeMask.node.height -= distance;
 
     if (this.targetGoldNode !== null) {
       this.targetGoldNode.x -= (this.hookAngle > 0 ? -deltaX : deltaX);
