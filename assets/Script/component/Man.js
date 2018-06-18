@@ -36,30 +36,23 @@ var Man = cc.Class({
     hookAngle: 0,
     angleDelta: 0.1,
     hookState: HookState.Rotation,
-
   },
 
   onLoad: function () {
-    // add key down and key up event
-    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
     this.hook.node.on("CatchGold", this.onCatchGold, this);
     this.maskHeight = this.ropeMask.node.height;
+    this.canvas = this.node.parent.getChildByName('Canvas'); // 全局的 canvas,用来处理全屏的触摸事件
+    this.canvas.on(cc.Node.EventType.TOUCH_END, this.onTouch, this);
   },
 
   onDestroy() {
-    cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
     this.hook.node.off("CatchGold", this.onCatchGold, this);
+    this.canvas.off(cc.Node.EventType.TOUCH_END, this.onTouch, this.node);
   },
 
-  onKeyDown: function (event) {
-    switch (event.keyCode) {
-      case cc.KEY.a: {
-        console.log('Press a key');
-        if (this.hookState === HookState.Rotation) {
-          this.hookState = HookState.FlyOut;
-        }
-      }
-      break;
+  onTouch: function (event) {
+    if (this.hookState === HookState.Rotation) {
+      this.hookState = HookState.FlyOut;
     }
   },
 
